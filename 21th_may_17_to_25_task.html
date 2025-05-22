@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+	//17
+
+let itemCount=0;
+itemCount++;
+console.log(itemCount);
+
+itemCount=5;
+
+console.log(itemCount);
+
+
+//18
+function testVarScope() 
+
+{
+	var testVar="I am local";
+    console.log(testVar);
+}
+
+testVarScope();
+
+//log from outside fuction
+//console.log(testVar);
+
+//result:it causing error,because its declaring iside fuction and its a private variable.
+
+
+//19
+var a=42;
+console.log(a);
+let b="JavaScript";
+console.log(b);
+
+console.log(true);
+console.log(null);
+console.log(undefined);
+console.log({ name: "John" });
+console.log([1, 2, 3]);
+console.log(function() {});
+
+
+//20
+
+
+let strNum1="50";
+
+let strNum2="25";
+
+let result=strNum1+strNum2;
+
+console.log(result);
+//its not adding the value inside varibale,instead its combining the values.
+
+
+
+
+//21
+let numVal=100;
+
+//let strVal=String(numVal);
+//console.log(strVal);
+//or
+let strVal= numVal.toString();
+
+console.log(strVal);
+
+
+//22
+const isLoggedIn=false;
+const isAdmin=false;
+
+if (isLoggedIn==true && isAdmin==true ) 
+{
+
+console.log("Admin access granted");
+}
+else if(isLoggedIn==true)
+{
+console.log("User access granted");
+}
+else
+{
+	console.log("Access denied");
+}
+
+
+
+//23
+
+let day="monday";
+
+
+if(day=="Sunday" || day=="Saturday")
+{
+
+    console.log("It's the weekend!");
+}
+else
+{
+   console.log("It's a weekday");
+}
+
+//24
+
+let isRaining=false;
+if(!isRaining)
+{
+	console.log("It's a sunny day!");
+}
+
+
+//25
+
+
+let originalPrice=200;
+console.log("originalPrice = "+originalPrice);
+
+let  discountPercentage=15;
+console.log("discountPercentage = "+discountPercentage+"%");
+
+let disamount=originalPrice*(discountPercentage/100);
+console.log("discountAmount = "+disamount);
+
+
+let finalprice=(originalPrice-disamount);
+console.log("finalprice = "+finalprice);
+
+
+
+
+
+
+</script>
+</body>
+</html>
