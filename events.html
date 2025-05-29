@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<!-- 1-->
+
+   <h3>Click Counter</h3>
+	
+	<button onclick="counterClick()">Click me</button>
+
+
+<p id="clickCount">Count:0</p>
+
+
+
+
+<script>
+
+let count=0;
+function counterClick()
+{
+	count++;
+	document.getElementById("clickCount").innerHTML="Count: "+count;
+
+}
+
+
+</script>
+
+
+<br><br>
+<hr>
+<br><br>
+<!-- 2-->
+
+<h3>Click "show/hide" button to show or hide paragraph</h3>
+
+<button onclick="showHide()">Show/Hide</button>
+
+<p id="vol" style="display: none;">Artificial intelligence is the ability of a computer or computer-controlled robot to perform tasks that are commonly associated with the intellectual processes characteristic of humans, such as the ability to reason.</p>
+
+
+<script>
+
+function showHide()
+{
+
+
+ const para= document.getElementById("vol");
+
+ if(para.style.display==="none")
+ {
+
+ 	para.style.display="block";
+ }else
+
+
+para.style.display="none";
+
+
+}
+
+</script>
+<br><br>
+<hr>
+<br><br>
+<!--3-->
+<h3>Click color button to change page background color</h3>
+
+<button onclick="color('red')">red</button>
+<br>
+<br>
+<button onclick="color('blue')">blue</button>
+<br><br>
+<button onclick="color('yellow')">yellow</button>
+
+
+
+<script>
+
+function color(color)
+{
+document.body.style.backgroundColor=color;
+}
+
+
+</script>
+<br><br>
+<hr>
+<br><br>
+<!--4-->
+<h3>Form Submission</h3>
+
+<form onsubmit="formSubb(event)">
+<input type="text" name="form1" placeholder="Enter your name" id="name1">
+<button type="submit">submit</button>
+
+
+</form>
+
+<script>
+
+
+function formSubb(event)
+{
+
+
+	event.preventDefault();
+	const val=document.getElementById("name1").value;
+	alert("you entered: "+val);
+}
+
+
+
+
+</script>
+
+<br><br>
+<hr>
+<br><br>
+<!--5-->
+
+<h3>Changing image while mouse over the image  </h3>
+
+<img src="img1.jpg" id="img1"
+onmouseover="changeimg()" 
+onmouseout="restoreimg()" 
+width="300" height="200" >
+
+<script>
+
+function changeimg()
+{
+	document.getElementById("img1").src="img2.jpg";
+
+}
+
+function restoreimg()
+{
+	document.getElementById("img1").src="img1.jpg";
+}
+
+
+</script>
+
+<br><br>
+<hr>
+<br><br>
+
+<!--6-->
+<h3>Live keybord</h3>
+
+<h3>Write something</h3>
+<input type="text" id="input1" placeholder="start typing.." >
+<p id="output1">you typed: </p>
+
+<script>
+
+const input=document.getElementById("input1");
+const output=document.getElementById("output1");
+
+input.addEventListener("keyup",
+function ()
+{
+	output.innerText="you typed: "+input.value;
+});
+
+
+</script>
+
+<br><br>
+<hr>
+<br><br>
+
+<!--7-->
+
+<h3>To do list</h3>
+
+<input type="text" id=list>
+
+
+<button onclick="addtodo()">add</button>
+<ul id="todoList"></ul>
+
+<script>
+
+function addtodo()
+{
+  const list=document.getElementById("list");
+
+  const task=input.value.trim();
+
+  if (task!== "") 
+  {
+
+
+  	const li=document.createElement("li");
+  	li.textContent=task;
+
+  	document.getElementById("todoList").appendChild(li);
+  	input.value="";
+
+  }
+}
+
+
+</script>
+
+<br><br>
+<hr>
+<br><br>
+
+<!--8-->
+
+
+<button onclick="disableButton()" id="subbtn">Submit</button>
+<script>
+
+function disableButton()
+{
+	const btn=document.getElementById("subbtn");
+	btn.disabled = true;
+	btn.textContent="submitted";
+}
+
+
+</script>
+
+<br><br>
+<hr>
+<br><br>
+
+<!--9-->
+<textarea id="charcount" placeholder="type something"></textarea>
+
+<p id="charcount1"></p>
+
+
+
+
+<script>
+
+var textcount=document.getElementById("charcount");
+
+var charcount=document.getElementById("charcount1");
+
+textcount.addEventListener("input", 
+
+function(){
+
+charcount.textContent=textcount.value.length;
+
+	});
+
+
+
+
+
+
+</script>
+
+<br><br>
+<hr>
+<br><br>
+
+<!--10-->
+<h3>Live color pick</h3>
+
+<label for="colorpick">pick a color</label>
+<input type="color" id="colopick" name="colopick">
+
+<div id="colorbox" style="width:100px; height: 100px"></div>
+<script>
+
+
+
+const clpick=document.getElementById("colorpick");
+const  colorbox=document.getElementById("colorbox");
+
+
+clpick.addEventListener("input",function()
+
+{
+
+colorbox.style.backgroundColor=clpick.value;
+
+}
+
+
+	)
+
+
+
+
+
+
+
+</script>
+
+
+<br><br>
+<hr>
+<br><br>
+
+<!--11-->
+
+<h3>Focus and blur highlight</h3>
+
+<input type="text" name="focus1" placeholder="Click here to focus" id="focus1">
+<script>
+
+
+const input1=document.getElementById("focus1");
+
+input1.addEventListener("focus",function()
+
+{
+   input1.style.border="3px solid yellow";
+});
+
+input1.addEventListener("blur",function()
+{
+input.style.border="";
+
+})
+
+
+</script>
+
+<br><br>
+<hr>
+<br><br>
+
+<!--12-->
+
+
+<h3>Double click on the Heart❤️</h3>
+
+<span id="heart" style="font-size: 40px;cursor: pointer;">🤍</span>
+
+
+<script>
+const heart=document.getElementById("heart");
+
+heart.addEventListener("dblclick",function () 
+
+{
+	if(heart.textContent==="🤍")
+	{
+    heart.textContent="❤️";
+	}else
+     {
+     	heart.textContent="🤍"
+     }
+})
+
+
+
+
+
+
+</script>
+
+<br><br>
+<hr>
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+

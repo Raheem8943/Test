@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+
+  <form id="qiz">
+    <h3>Capital of India</h3>
+
+    <input type="radio" name="capital" value="new delhi">new delhi<br>
+    <input type="radio" name="capital" value="kerala">kerala<br>
+    <input type="radio" name="capital" value="tamilnadu">tamilnadu<br><br>
+
+    <button type="button" onclick="Answer()">Check Answer</button>
+  </form>
+
+  <p id="b">Result: </p>
+
+  <script>
+    function Answer() {
+      const options = document.getElementsByName("capital");
+      let selected = null;
+
+      for (let option of options) {
+        if (option.checked) {
+          selected = option.value;
+          break;
+        }
+      }
+
+      if (selected === "new delhi") {
+        document.getElementById("b").innerHTML = "Result: Answer is correct";
+      } else if (selected) {
+        document.getElementById("b").innerHTML = "Result: Answer is wrong";
+      } else {
+        document.getElementById("b").innerHTML = "Result: Please select an option";
+      }
+    }
+  </script>
+
+</body>
+</html>
