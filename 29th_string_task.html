@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!--1-->
+<h3>Word Reversing</h3>
+
+<script>
+
+let a="hello world";
+document.write(a+"<br>");
+
+function revString(a)
+{
+let rev='';
+for(let i=a.length-1;i>=0;i--)
+{
+	rev += a[i];
+}
+document.write("Reversed String: "+rev);
+}
+
+revString(a);
+
+</script>
+
+<br><br><hr><br><br>
+
+<!--2-->
+<h3>Palimdrome</h3>
+
+<script>
+
+let b="malayalam";
+document.write(b+"<br>");
+function revString(b)
+{
+let rev='';
+for(let i=b.length-1;i>=0;i--)
+{
+	rev += b[i];
+}
+return rev;
+}
+
+
+let c=revString(b);
+if (c==b) 
+
+{
+document.write("palindrome");
+}else
+{
+document.write("Not palindrome");
+}
+
+
+</script>
+
+
+<!--3-->
+
+<br><br><hr><br><br>
+
+<h3>vowels count</h3>
+
+
+<script>
+
+
+let vow="the world is vast";
+let count=0;
+
+let lovercase=vow.toLowerCase();
+
+for(let i=0; i <lovercase.length;i++)
+{
+	if("aeiou".includes(lovercase[i]))
+	{
+		count++;
+	}
+}
+
+document.write("String: "+vow+"<br>");
+
+document.write("Number of vowels: "+count);
+
+</script>
+
+
+<!--4-->
+
+<br><br><hr><br><br>
+<h3>print first letter of each word in uppercase</h3>
+
+
+<script>
+
+let sentance="the world is vast and beautiful";
+document.write("Input :"+sentance+"<br>");
+
+let sent=sentance.split(" ");
+
+for(let i=0; i<sent.length;i++ )
+{
+	let sent1=sent[i];
+    sent[i]=sent1.charAt(0).toUpperCase()+sent1.slice(1);
+
+
+}
+
+
+let res=sent.join(" ");
+
+document.write("output: "+res);
+
+</script>
+
+<!--5-->
+
+<br><br><hr><br><br>
+
+<h3>spaces in a string with hyphens</h3>
+
+
+<script>
+
+let string1="the world is vast and beautiful";
+document.write("input: "+string1+"<br>");
+
+let string2=string1.replaceAll(" ","-");
+document.write("output: "+string2);
+
+</script>
+
+<!--6-->
+
+<br><br><hr><br><br>
+
+
+<h3>how many times each character appears</h3>
+<script>
+
+
+let char1="the world is vast and beautiful";
+document.write("input: "+char1+"<br>");
+
+let lenght1={};
+for ( let i=0;i<char1.length;i++)
+{
+	let char2=char1[i];
+
+	if(lenght1[char2]){
+    lenght1[char2]++;
+
+	}else
+	{
+		lenght1[char2]=1;
+	}
+}
+
+for (let lenght2 in lenght1)
+{
+	document.write(lenght2+": "+lenght1[lenght2]+"<br>");
+}
+</script>
+
+<!--7-->
+
+<br><br><hr><br><br>
+<h3>print without the first and last characters</h3>
+
+<script>
+
+let word1="the world is vast and beautiful";
+document.write("input: "+word1+"<br>");
+
+if(word1.length>2)
+{
+	let result=word1.slice(1,-1);
+	document.write("output: "+result);
+}
+
+</script>
+
+<!--8-->
+
+<br><br><hr><br><br>
+<h3>check if one is a rotated version of the other</h3>
+<script>
+
+let s1="hello";
+let s2="lohel";
+
+document.write("String 1: "+s1+"<br>");
+document.write("String 2: "+s2+"<br><br>");
+
+if(s1.length===s2.length && (s1+s1).includes(s2))
+{
+	document.write("It is rotated string");
+}else
+{
+	document.write("It is not a rotated string");
+}
+
+</script>
+<!--9-->
+
+<br><br><hr><br><br>
+<h3>print the longest word</h3>
+
+<script>
+
+let long="the world is vast and beautiful";
+document.write(long+"<br><br>");
+
+let long1=long.split(" ");
+ let longest=long1[0];
+
+ for(let i=1;i<long1.length;i++)
+ {
+ 	if(long1[i].length >  longest.length)
+ 	{
+ 		longest=long1[i];
+ 	}
+ }
+
+document.write("Longest word is: "+longest);
+
+</script>
+
+<!--9-->
+
+<br><br><hr><br><br>
+
+<h3>removing duplicate characters</h3>
+<script>
+
+let wrd="horror"
+
+document.write("input: "+wrd+"<br><br>");
+
+let rst="";
+for(let i=0;i < wrd.length;i++)
+{
+	if(!rst.includes(wrd[i]))
+	{
+		rst += wrd[i];
+	}
+}
+
+document.write("output: "+rst);
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
